@@ -33,18 +33,18 @@ function App() {
       answer: "A configuration setting for the learning algorithm itself — set before training, not learned from data. Tuned manually or via search. Examples: learning rate, number of hidden layers, number of trees in a forest"
      },
      {question:"What is cross-validation?",
-      answer: "A technique to evaluate model performance by splitting the data into k folds, training on k-1 folds, and testing on the remaining fold — repeated k times. k-fold cross-validation reduces dependency on a single train/test split"
+      answer: "A technique to evaluate model performance by splitting the data into k folds, training on k-1 folds, and testing on the remaining fold, repeated k times. k-fold cross-validation reduces dependency on a single train/test split"
      }
   ];
 
   return (
-    <div>
-      <h1> Machine Learning Basics</h1>
-      <p>How well you know your machine learning basics?</p>
-      <p>Number of Cards: {questions.length}</p>
-      <div>
-        <Flashcard questions = {questions}/>
+    <div className="contentContainer">
+      <h1 className="Title">Machine Learning Basics</h1>
+      <div className="description">
+        <p>How well do you know your machine learning basics?</p>
+        <p>Cards: {questions.length}</p>
       </div>
+      <Flashcard questions={questions} />
     </div>
   )
 }
