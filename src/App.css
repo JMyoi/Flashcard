@@ -115,7 +115,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 16px;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
 .nextBttn {
@@ -138,4 +139,187 @@
 
 .nextBttn:active {
     transform: translateY(0);
+}
+
+/* ── Shared button base (nav / shuffle / master / submit) ── */
+.navBttn,
+.shuffleBttn,
+.masterBttn,
+.submitBttn {
+    padding: 10px 22px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
+    transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
+}
+
+.navBttn,
+.submitBttn {
+    background: linear-gradient(135deg, #aa3bff, #7c3aed);
+}
+
+.shuffleBttn {
+    background: linear-gradient(135deg, #38bdf8, #6366f1);
+}
+
+.masterBttn {
+    background: linear-gradient(135deg, #34d399, #059669);
+    box-shadow: 0 4px 14px rgba(5, 150, 105, 0.35);
+}
+
+.navBttn:hover:not(:disabled),
+.shuffleBttn:hover,
+.masterBttn:hover,
+.submitBttn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
+}
+
+.navBttn:active:not(:disabled),
+.shuffleBttn:active,
+.masterBttn:active,
+.submitBttn:active {
+    transform: translateY(0);
+}
+
+/* ── Disabled boundary buttons (no wrap-around) ── */
+.navBttn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    box-shadow: none;
+    background: linear-gradient(135deg, #b8b3c4, #908a9e);
+}
+
+/* ── Card progress indicator ── */
+.cardProgress {
+    color: white;
+    text-align: center;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    margin: 0 0 12px;
+    opacity: 0.85;
+}
+
+/* ── Streak counters ── */
+.streaks {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+}
+
+.streakItem {
+    color: white;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 18px;
+    border-radius: 99px;
+    font-size: 0.95rem;
+}
+
+.streakItem strong {
+    color: #f0abfc;
+}
+
+/* ── Guess input + feedback ── */
+.guessForm {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.guessForm label {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+}
+
+.guessRow {
+    display: flex;
+    gap: 10px;
+}
+
+.guessInput {
+    flex: 1;
+    padding: 10px 16px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 2px solid rgba(170, 59, 255, 0.4);
+    background: #ffffff;
+    color: #1e1b2e;
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.guessInput:focus {
+    border-color: #aa3bff;
+    box-shadow: 0 0 0 3px rgba(170, 59, 255, 0.25);
+}
+
+.guessInput.correct {
+    border-color: #16a34a;
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.25);
+}
+
+.guessInput.incorrect {
+    border-color: #dc2626;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.25);
+}
+
+.feedback {
+    margin: 0;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.feedback.correct {
+    color: #4ade80;
+}
+
+.feedback.incorrect {
+    color: #fca5a5;
+}
+
+/* ── Mastered cards list ── */
+.allDone {
+    margin-top: 40px;
+    text-align: center;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.masteredList {
+    margin-top: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    padding: 24px 28px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.masteredList h2 {
+    margin: 0 0 14px;
+    font-size: 1.2rem;
+    color: #059669;
+}
+
+.masteredList ul {
+    margin: 0;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.masteredList li {
+    color: #1e1b2e;
+    font-size: 0.98rem;
+    line-height: 1.4;
 }
