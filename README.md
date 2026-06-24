@@ -1,10 +1,10 @@
-# Web Development Project 3 - *Name of App Here*
+# Web Development Project 3 - *ML Flashcard*
 
-Submitted by: **Your Name Here**
+Submitted by: **Jay Chen**
 
-This web app: **insert description**
+This web app: **Flashcard for ML concepts**
 
-Time spent: **X** hours spent in total
+Time spent: **3** hours spent in total
 
 ## Required Features
 
